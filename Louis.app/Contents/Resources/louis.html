@@ -9,13 +9,15 @@
 		}
 		
 		</style>
+
+
 	</head>
 	<body>
 	<h1>Louis Braille Translator</h1>
 	<p>This is a simple Braille translator that will generate a Braille ready file from a wide range of file formats. These include HTML, RTF, TXT, ODT, DOC and XML files. Set the options you wish to use below and press the <strong>Translate</strong> button. You will be asked for the original file and the name for your Braille ready file.</p>
 	<form action="braille://write" method="get">
 	
-	<fieldset title="Layout">
+	<p><fieldset title="Braille Code">
 	
 	<legend>Braille Code</legend>
 	
@@ -29,13 +31,21 @@
 <option value="en-gb-g1.ctb">UK Uncontracted</option>
 <option value="" disabled="true">French</option>
 <option value="fr-bfu-g2.ctb">French Unified Contracted</option>
+<option value="fr-bfu-comp6.utb">French Unified Ucontracted</option>
 <option value="fr-ca-g1.utb">French Canada Contracted</option>
 <option value="Fr-Ca-g2.ctb">French Canada  Uncontracted</option>
 <option value="fr-fr-g1.utb">French France Contracted</option>
 <option value="Fr-Fr-g2.ctb">French France  Uncontracted</option>
 <option value="" disabled="true">Spanish</option>
 <option value="es-g1.ctb">Spanish Uncontracted</option>
+<option value="" disabled="true">South Africa</option>
+<option value="afr-za-g1.ctb">Afrikaans</option>
+<option value="en-ueb-g1.ctb">Isizulu</option>
+<option value="en-ueb-g1.ctb">IsiXhosa</option>
+<option value="sot-za-g1.ctb">Sotho</option>
+<option value="tsn-za-g1.ctb">Tswana</option>
 <option value="" disabled="true">Other Languages</option>
+
 <option value="chr-us-g1.ctb">Cherokee</option>
 </select>
 <br/>
@@ -50,35 +60,42 @@
 <option value="" disabled="true">Spanish</option>
 <option value="Es-Es-G0.utb">Spanish Grade 0</option>
 </select>
-	</fieldset>
-	<fieldset>
+	</fieldset></p>
+	<p><fieldset  title="Page Layout">
 	<legend>Page Layout</legend>
 	<label for="cells">Cells:</label> <input name="cells" size="2" id="cells" value="40"/>
 	<label for="Rows">Rows:</label> <input name="rows" size="2" id="rows" value="28"/> 
-	</fieldset>
+	</fieldset></p>
 	
-	<fieldset>
+	<p><fieldset title="Page Numbering">
 	<legend>Page Numbering</legend>
 	Number Print Pages: <label for="printPagesoff">No</label><input type="radio" name="printPages" value="off" id="printPagesoff" checked="true" />  <label for="printPageson">Yes</label><input type="radio" name="printPages" value="yes" id="printPageson"/> 
-	Print Page Numbers at: <select name="printPageNumberAt">
+	<br/>Print Page Numbers at: <select name="printPageNumberAt">
 	<option value="top" selected="true" selected="true">Top</option>
 	<option value="bottom">Bottom</option>
-	</select>
-	<br/>
+	</select></p>
 	
-	Number Braille Pages: <label for="braillePagesoff">No</label><input type="radio" name="braillePages" value="off" id="printPagesoff"/>  <label for="braillePageson">Yes</label><input type="radio" name="braillePages" value="yes" id="braillePageson" checked="true"/>  
-	Braille Page Numbers at: <select name="braillePageNumberAt">
+	<p>Number Braille Pages: <label for="braillePagesoff">No</label><input type="radio" name="braillePages" value="off" id="printPagesoff"/>  <label for="braillePageson">Yes</label><input type="radio" name="braillePages" value="yes" id="braillePageson" checked="true"/>  
+	<br/>Braille Page Numbers at: <select name="braillePageNumberAt">
 	<option value="top" selected="true">Top</option>
 	<option value="bottom" selected="true">Bottom</option>
 	</select>
-	</fieldset>
+	</fieldset></p>
 	
-	<fieldset title="Layout">
+	<p><fieldset title="Interpoint">
 	<legend>Interpoint</legend>
-	Interpoint <input type="radio" name="interpoint" value="off" id="interpointoff" checked="true" /> <label for="interpointoff">Off</label> <input type="radio" name="interpoint" value="on" id="interpointon"/> <label for="interpointon">On</label> 
-	</fieldset>
+	Interpoint <input type="radio" name="interpoint" value="no" id="interpointoff" checked="true" /> <label for="interpointoff">No</label> <input type="radio" name="interpoint" value="yes" id="interpointon"/> <label for="interpointon">Yes</label> 
+	</fieldset></p>
+
+<p><fieldset title="Post Processing">
+	<legend>Post Processing</legend>
+	<label for="openfile">Open Translated File <input type="checkbox" name="openfile" value="1" id="openfile" checked="true" /> 
+	</fieldset></p>
+
 	
 	<p align="right"><input type="reset" name="reset" value="Reset Form" accesskey="t"/> <input type="submit" name="Submit" value="Translate" accesskey="t"/></p>
+<hr/>
+
 	</form>
 	</body>
 </html>
